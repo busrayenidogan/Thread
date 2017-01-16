@@ -34,3 +34,18 @@ Thread Tutorial
    Pthread kütüphanesi aynı zamanda senkronizasyon işlemleri için gerekli mutex 
    ve conditional işlemleri için gerekli desteği de içermektedir.
 */
+
+Yeni bir thread oluşturmak için pthread_create fonksiyonu kullanılır.
+
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg)
+
+Başarılı durumda 0 döner. Hata durumunda ise geriye bir hata kodu dönecektir.+
+thread parametresi pthread_t türünde olup önceden tanımlanması gerekir. Oluşan thread'e bu referansla her zaman erişilebilecektir.
+attr parametresi thread spesifik olarak pthread_attr_ ile başlayan fonksiyonlarla ayarlanmış, scheduling policy, stack büyüklüğü, detach policy gibi kuralları gösterir.
+start_routine thread tarafından çalıştırılacak olan fonksiyonu gösterir.
+arg ise thread tarafından çalıştırılacak fonksiyona geçirilecek void*'a cast edilmiş genel bir veri yapısını göstermektedir.
+
+
+
+
+
